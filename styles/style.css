@@ -78,40 +78,6 @@ header {
     height: 100%;
 }
 
-/* .side-column {
-    width: 15%;
-    padding-top: 8vh;
-    text-align: right;
-    padding-right: 1rem;
-}
-.side-column span {
-    opacity: 0.4;
-    position: relative;
-    display: block;
-    height: 40px;
-    text-align: left;
-    font-size: 3rem;
-    height: auto;
-    width: 3rem;
-    margin-left: 10%;
-    margin-bottom: 3%;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.side-column span:hover {
-    opacity: 0.8;
-}
-.side-column a {
-    text-decoration: none;
-    transition: color 0.5s ease;
-    font-weight: 800;
-    font-size: 1.5rem;
-}
-
-.side-column a:hover {
-    color: var(--secondary-font-color); */
-/* } */
-
 .welcome-board {
     display: flex;
     flex-direction: column;
@@ -272,6 +238,11 @@ main {
     opacity: 0.8;
 }
 
+/* needed to not be partialy hidded behind fixed navbar */
+#skills {
+    padding-top: 7vh;
+}
+
 #skills .wrapper-bar {
     width: 100%;
     height: 60vh;
@@ -280,8 +251,10 @@ main {
     box-sizing: border-box;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
+
+
 
 #skills .wrapper-bar h2 {
     font-size: 3rem;
@@ -293,12 +266,10 @@ main {
     display: flex;
     width: 100%;
     height: 90%;
-    /* //border: tomato 1px solid; */
     flex-direction: column;
 }
 .flex-row {
     width: 100%;
-    /* //border: goldenrod 1px solid; */
     display: flex;
     
 }
@@ -324,11 +295,9 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* border: green 1px solid; */
     height: 100%;
     align-items: center;
     padding: 1rem;
-    /* transition: opacity 0.2s ease-in-out; */
 }
 
 .main-skills span {
@@ -353,12 +322,113 @@ main {
 .skill  span:hover {
     opacity: 1;
 }
-.skill span:hover + .skill-name {
+.skill span:hover + .skill-name h3{
     opacity: 1;
 }
 
-.skill-name {
+.skill span:hover+.skill-name h4 {
+    opacity: 1;
+}
+.skill-name  h3{
     opacity: 0;
     color: var(--primary-welcome-bg-color);
+    font-size: 3rem;
     transition: opacity 0.2s ease-in-out;
 }
+.skill-name h4 {
+    opacity: 0;
+    color: var(--primary-welcome-bg-color);
+    font-size: 2rem;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+#projects {
+    padding-top: 10vh;
+}
+
+.main-grid {
+    width: 90%;
+    height: 80vh;
+    display: grid;
+    position: relative;
+    left: 5%;
+    margin-bottom: 10vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
+    box-sizing: border-box;
+}
+.main-grid .project {
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    z-index: 0;
+    box-sizing: border-box;
+    border: var(--secondary-font-color) 2px solid;
+}
+
+.main-grid .project-overlay-text {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    z-index: 1;
+    
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out
+}
+
+.main-grid .project:hover .project-overlay-text {
+    opacity: 0.8;
+}
+
+
+.main-grid .project:nth-child(1) {
+    background-image: url("graphics/to-do-project.jpg");
+}
+.main-grid .project:nth-child(2) {
+    background-image: url("graphics/calculator-project.jpg");
+}
+.main-grid .project:nth-child(3) {
+    background-image: url("graphics/thermometer-project.jpg");
+}
+.main-grid .project:nth-child(4) {
+    background-image: url("graphics/cinema-project.jpg");
+}
+.main-grid .project:nth-child(5) {
+    background-image: url("graphics/guest-list-project.jpg");
+}
+.main-grid .project:nth-child(6) {
+    background-image: url("graphics/strava-analyser-project.jpg");
+}
+
+
+.project-overlay-text  span {
+    font-size: 5rem;
+    color: var(--secondary-font-color);
+}
+
+ .main-grid .project-overlay-text .demo, .git-code, .project-title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+ }
+
+ .project-title {
+    grid-column: 1 / 3;
+    background-color: var(--secondary-font-color);
+    
+ }
+
+ .main-grid .project-overlay-text .demo {
+    background-color: var(--primary-welcome-bg-color);
+ }
+
+ .main-grid .project-overlay-text .git-code {
+     background-color: var(--secondary-welcome-bg-color);
+ }
