@@ -20,6 +20,11 @@ body {
     background: var(--primary-bg-color);
 }
 
+.site-wrapper{
+    min-height: 100%;
+    position: relative;
+} 
+
 nav {
     display: flex;
     height: 6vh;
@@ -59,6 +64,27 @@ nav {
     width: 5px;
     align-self: center;
     margin: 0 2%;
+}
+@media only screen and (max-width: 640px) {
+    nav {
+        height: 12vh;
+        padding-left: 1%;
+    }
+
+    .nav-bar {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* .nav-bar a {
+        font-size: 1rem;
+    } */
+
+    .nav-bar .ver-separator {
+        width: 3px;
+        opacity: 0;
+    }
 }
 
 header {
@@ -115,7 +141,7 @@ header {
     bottom: 0;
 }
 
-.triangle {
+/* .triangle {
     position: relative;
     display: inline-block;
     height: 3rem;
@@ -140,7 +166,7 @@ header {
 @keyframes arrow-sliding {
     0% {top: 0; }
     100% {top: calc(90% - 3rem);}
-}
+} */
 
 .bottom-bar {
     width: 100%;
@@ -151,6 +177,34 @@ header {
     top: 6vh;
     display: block;
     z-index: 2;
+}
+
+@media only screen and (max-width: 480px) {
+
+    header {
+        background-image: none;
+        background-color: var(--primary-welcome-bg-color);
+    }
+    .welcome-board h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .welcome-board h2 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .welcome-board .hor-separator {
+        height: 0.25rem;
+        width: 5rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .bottom-bar {
+        top: 12vh;
+    }
 }
 
 main {
@@ -202,7 +256,7 @@ main {
 
 #contact {
     display: flex;
-    height: 25vh;
+    height: 10rem;
     width: 100%;
     background-color: var(--primary-welcome-bg-color);
     text-align: justify;
@@ -228,14 +282,27 @@ main {
 
 .icons span {
     opacity: 0.4;
-    height: 40px;
+    /* height: 40px; */
     font-size: 4rem;
     height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
     transition: opacity 0.5s ease-in-out;
 }
 
 .icons span:hover {
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 640px) {
+    #contact {
+        font-size: 1rem;
+        height: 8rem;
+    }
+
+    .icons span {
+    font-size: 3rem;
+    }
 }
 
 /* needed to not be partialy hidded behind fixed navbar */
@@ -349,14 +416,14 @@ main {
 
 .main-grid {
     width: 90%;
-    height: 80vh;
+    /* height: 80vh; */
     display: grid;
     position: relative;
-    left: 5%;
+    left: 5vw;
     margin-bottom: 10vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 2rem;
+    /* grid-template-rows: 1fr 1fr; */
+    grid-gap: 3vw;
     box-sizing: border-box;
 }
 .main-grid .project {
@@ -366,6 +433,8 @@ main {
     z-index: 0;
     box-sizing: border-box;
     border: var(--secondary-font-color) 2px solid;
+    height: 21vw;
+    width: 28vw;
 }
 
 .main-grid .project-overlay-text {
@@ -406,7 +475,7 @@ main {
 
 
 .project-overlay-text  span {
-    font-size: 5rem;
+    font-size: 5vw;
     color: var(--secondary-font-color);
 }
 
@@ -422,7 +491,10 @@ main {
  .project-title {
     grid-column: 1 / 3;
     background-color: var(--secondary-font-color);
-    
+ }
+
+ .project-title h1 {
+     font-size: 2vw;
  }
 
  .main-grid .project-overlay-text .demo {
@@ -431,4 +503,43 @@ main {
 
  .main-grid .project-overlay-text .git-code {
      background-color: var(--secondary-welcome-bg-color);
+ }
+
+ @media only screen and (max-width: 480px)
+ {
+     .main-grid {
+         grid-template-columns: 1fr;
+         left: 10vw;
+     }
+
+     .main-grid .project {
+         width: 80vw;
+         height: 60vw;
+     }
+         .project-overlay-text span {
+             font-size: 20vw;
+         }
+
+         .project-title h1 {
+             font-size: 8vw;
+         }
+    }
+ @media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+     .main-grid {
+         grid-template-columns: 1fr 1fr;
+     }
+
+     .main-grid .project {
+         width: 40vw;
+         height: 30vw;
+     }
+
+     .project-overlay-text span {
+         font-size: 10vw;
+     }
+
+     .project-title h1 {
+         font-size: 4vw;
+     }
  }
