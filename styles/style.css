@@ -20,14 +20,14 @@ body {
     background: var(--primary-bg-color);
 }
 
-.site-wrapper{
+/* .site-wrapper{
     min-height: 100%;
     position: relative;
-} 
+}  */
 
 nav {
     display: flex;
-    height: 6vh;
+    height: 3rem;
     background-color: black;
     position: fixed;
     width: 100%;
@@ -67,7 +67,7 @@ nav {
 }
 @media only screen and (max-width: 640px) {
     nav {
-        height: 12vh;
+        height: 6rem;
         padding-left: 1%;
     }
 
@@ -170,13 +170,20 @@ header {
 
 .bottom-bar {
     width: 100%;
-    height: 1vh;
+    height: 0.5rem;
     background-color: var(--secondary-font-color);
     position: sticky;
     position: -webkit-sticky;
-    top: 6vh;
+    top: 3rem;
     display: block;
     z-index: 2;
+}
+
+@media only screen and (max-height: 600px) and (min-width: 481px)
+{
+    .welcome-board {
+        padding-top: 10rem;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -203,7 +210,7 @@ header {
 @media only screen and (max-width: 640px) {
 
     .bottom-bar {
-        top: 12vh;
+        top: 6rem;
     }
 }
 
@@ -212,10 +219,10 @@ main {
     position: relative;
 }
 #about {
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     background-color: #333;
-    padding: 7vh;
+    padding: 2vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -229,10 +236,9 @@ main {
 }   
 #about .side-text {
     flex: 2;
-
     display: flex;
     flex-direction: column;
-    padding: 15% 5%;
+    padding: 7vh 5% 1rem 5%;
 }
 
 #about .side-photo img {
@@ -252,6 +258,40 @@ main {
     height: 0.3rem;
     width: 9rem;
     margin-top: 1rem;
+}
+
+@media only screen and (min-width: 681px) and (max-width: 1024px)
+{
+    .side-text p {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 680px)
+{
+    #about {
+        flex-direction: column-reverse;
+        padding: 0.5vh;
+    }
+
+    .side-text p {
+        font-size: 0.8rem;
+        margin-top: 3%;
+    }
+
+    #about .side-photo img {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .side-text h2 {
+        font-size: 1.3rem;
+    }
+
+    #about .side-text {
+        padding: 7rem 5% 0.2rem 5%;
+    }
 }
 
 #contact {
@@ -312,7 +352,7 @@ main {
 
 #skills .wrapper-bar {
     width: 100%;
-    height: 60vh;
+    /* height: 60vh; */
     background-color: var(--secondary-font-color);
     padding-top: 1rem;
     box-sizing: border-box;
@@ -409,9 +449,58 @@ main {
     transition: opacity 0.2s ease-in-out;
 }
 
+@media only screen and (min-width:481px) and (max-width:1024px)
+{
+    .main-skills span {
+        font-size: 6rem;
+    }
+
+    .secondary-skills span {
+        font-size: 3rem;
+    }
+    .skill-name h3 {
+        font-size: 2rem; 
+    }
+
+    .skill-name h4 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px)
+{
+    
+    .flex-wrapper{
+        align-items: center;
+    }
+    .main-skills {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .secondary-skills .skill {
+        height: 8rem;
+    }
+ 
+
+    .secondary-skills {
+        font-size: 2rem;
+        width: 90vw;
+        flex-wrap: wrap;
+        position:relative;
+        /* left: 25vw; */
+        justify-content: space-around;
+    }
+
+    /* .secondary-skills .skills {
+        padding: 2rem;
+    } */
+}
+
 
 #projects {
-    padding-top: 10vh;
+    padding-top: 6rem;
 }
 
 .main-grid {
@@ -507,24 +596,32 @@ main {
 
  @media only screen and (max-width: 480px)
  {
+     #projects {
+         padding-top: 8rem;
+     }
      .main-grid {
          grid-template-columns: 1fr;
          left: 10vw;
+         grid-gap: 5vw;
      }
 
      .main-grid .project {
          width: 80vw;
          height: 60vw;
      }
-         .project-overlay-text span {
-             font-size: 20vw;
-         }
-
-         .project-title h1 {
-             font-size: 8vw;
-         }
+    .project-overlay-text span {
+        font-size: 20vw;
+     }
+     
+     .project-title h1 {
+        font-size: 8vw;
+     }
     }
  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+    #projects {
+        padding-top: 6rem;
+    }
 
      .main-grid {
          grid-template-columns: 1fr 1fr;
