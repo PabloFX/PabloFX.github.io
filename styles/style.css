@@ -20,10 +20,6 @@ body {
     background: var(--primary-bg-color);
 }
 
-/* .site-wrapper{
-    min-height: 100%;
-    position: relative;
-}  */
 
 nav {
     display: flex;
@@ -77,13 +73,15 @@ nav {
         flex-wrap: wrap;
     }
 
-    /* .nav-bar a {
-        font-size: 1rem;
-    } */
 
     .nav-bar .ver-separator {
         width: 3px;
         opacity: 0;
+        display: none;
+    }
+
+    .nav-bar li {
+        margin-left: 4vw;
     }
 }
 
@@ -94,7 +92,7 @@ header {
     height: 99vh;
     width: 100%;
     background-image: linear-gradient(to right, var(--primary-welcome-bg-color) 0%, var(--primary-welcome-bg-color) 50%, var(--secondary-welcome-bg-color) 50%, var(--secondary-welcome-bg-color) 100%);
-    /* border-bottom: var(--secondary-font-color) 5px solid; */
+
 
 }
 
@@ -140,33 +138,6 @@ header {
     position: relative;
     bottom: 0;
 }
-
-/* .triangle {
-    position: relative;
-    display: inline-block;
-    height: 3rem;
-    width: 6rem;
-    animation-name: arrow-sliding;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-
-.triangle a span {
-    animation: arrow-sliding;
-    color: var(--primary-font-color);
-    font-size: 6rem;
-    position: relative;
-    top: -1.5rem;
-    opacity: 0.5;
-}
-
-@keyframes arrow-sliding {
-    0% {top: 0; }
-    100% {top: calc(90% - 3rem);}
-} */
 
 .bottom-bar {
     width: 100%;
@@ -219,7 +190,6 @@ main {
     position: relative;
 }
 #about {
-    /* height: 100vh; */
     width: 100%;
     background-color: #333;
     padding: 2vh;
@@ -227,6 +197,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    
 }
 
 #about .side-photo {
@@ -250,6 +222,7 @@ main {
 #about .side-text p {
     margin-top: 5%;
     text-align: justify;
+    font-family: "Oswald", sans-serif;
 }
 
 #about .side-text .hor-separator {
@@ -260,18 +233,27 @@ main {
     margin-top: 1rem;
 }
 
+#about .side-text h2 {
+    font-family: "Oswald", sans-serif;
+}
+
 @media only screen and (min-width: 681px) and (max-width: 1024px)
 {
+    #about {
+        min-height: auto;
+    }
+
     .side-text p {
         font-size: 0.8rem;
     }
-}
+} 
 
 @media only screen and (max-width: 680px)
 {
     #about {
         flex-direction: column-reverse;
         padding: 0.5vh;
+        min-height: auto;
     }
 
     .side-text p {
@@ -322,7 +304,6 @@ main {
 
 .icons span {
     opacity: 0.4;
-    /* height: 40px; */
     font-size: 4rem;
     height: auto;
     margin-left: 5px;
@@ -348,11 +329,11 @@ main {
 /* needed to not be partialy hidded behind fixed navbar */
 #skills {
     padding-top: 7vh;
+    
 }
 
 #skills .wrapper-bar {
     width: 100%;
-    /* height: 60vh; */
     background-color: var(--secondary-font-color);
     padding-top: 1rem;
     box-sizing: border-box;
@@ -367,6 +348,7 @@ main {
     font-size: 3rem;
     text-align: center;
     color: var(--primary-welcome-bg-color);
+
 }
 
 .flex-wrapper {
@@ -431,26 +413,41 @@ main {
 }
 .skill span:hover + .skill-name h3{
     opacity: 1;
+    font-family: "Oswald",
+    "Poppins",
+    sans-serif;
 }
 
 .skill span:hover+.skill-name h4 {
     opacity: 1;
+    font-family: "Oswald",
+    "Poppins",
+    sans-serif;
 }
 .skill-name  h3{
     opacity: 0;
     color: var(--primary-welcome-bg-color);
     font-size: 3rem;
     transition: opacity 0.2s ease-in-out;
+    font-family: "Oswald",
+    "Poppins",
+    sans-serif;
 }
 .skill-name h4 {
     opacity: 0;
     color: var(--primary-welcome-bg-color);
     font-size: 2rem;
     transition: opacity 0.2s ease-in-out;
+    font-family: "Oswald",
+    "Poppins",
+    sans-serif;
 }
 
 @media only screen and (min-width:481px) and (max-width:1024px)
 {
+    .wrapper-bar h2 {
+        margin-top: 4rem;
+    }
     .main-skills span {
         font-size: 6rem;
     }
@@ -469,7 +466,9 @@ main {
 
 @media only screen and (max-width: 480px)
 {
-    
+    .wrapper-bar  h2{
+        margin-top: 4rem;
+    }
     .flex-wrapper{
         align-items: center;
     }
@@ -489,13 +488,10 @@ main {
         width: 90vw;
         flex-wrap: wrap;
         position:relative;
-        /* left: 25vw; */
         justify-content: space-around;
     }
 
-    /* .secondary-skills .skills {
-        padding: 2rem;
-    } */
+
 }
 
 
@@ -505,13 +501,11 @@ main {
 
 .main-grid {
     width: 90%;
-    /* height: 80vh; */
     display: grid;
     position: relative;
     left: 5vw;
     margin-bottom: 10vh;
     grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
     grid-gap: 3vw;
     box-sizing: border-box;
 }
@@ -584,6 +578,9 @@ main {
 
  .project-title h1 {
      font-size: 2vw;
+     font-family: "Oswald",
+     "Poppins",
+     sans-serif;
  }
 
  .main-grid .project-overlay-text .demo {
@@ -601,12 +598,13 @@ main {
      }
      .main-grid {
          grid-template-columns: 1fr;
-         left: 10vw;
+         left: 9vw;
+         right: 9vw;
          grid-gap: 5vw;
      }
 
      .main-grid .project {
-         width: 80vw;
+         width: 82vw;
          height: 60vw;
      }
     .project-overlay-text span {
@@ -620,7 +618,7 @@ main {
  @media only screen and (min-width: 481px) and (max-width: 1024px) {
 
     #projects {
-        padding-top: 6rem;
+        padding-top: 8rem;
     }
 
      .main-grid {
